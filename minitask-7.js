@@ -1,7 +1,10 @@
 const studentGrades = (grade) => {
   const { matematika, bahasa_inggris, bahasa_indonesia, ipa } = grade
 
-  return (matematika + bahasa_inggris + bahasa_indonesia + ipa) / Object.entries(grades).length
+  const total = matematika + bahasa_inggris + bahasa_indonesia + ipa
+  const average = total / Object.entries(grade).length
+
+  return { total, average }
 }
 
 const grades = {
@@ -11,5 +14,6 @@ const grades = {
   ipa: 40,
 }
 
-const result = studentGrades(grades)
-console.log(`Nilai rata-rata: ${result}`)
+const { total, average} = studentGrades(grades)
+console.log(`Total nilai: ${total}`)
+console.log(`Nilai rata-rata: ${average}`)
